@@ -1,0 +1,2 @@
+# DjangoMethods
+Django concepts 
