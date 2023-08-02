@@ -3,12 +3,12 @@ from django.http import HttpResponse
 
 def index(request):
     peoples = [
-        {'name': 'Rohan Katkar', 'age': '22'},
-        {'name': 'Atul Mharnur', 'age': '16'},
-        {'name': 'Ashish Ranwalkar', 'age': '30'},
-        {'name': 'Shriratna Ranwalkar', 'age':'26'},
-        {'name': 'Amol Patil', 'age': '28'},
-        {'name': 'Nikhil', 'age': '14'}
+        {'name': 'Rohan Katkar', 'age': 22},
+        {'name': 'Atul Mharnur', 'age': 16},
+        {'name': 'Ashish Ranwalkar', 'age': 30},
+        {'name': 'Shriratna Ranwalkar', 'age':26},
+        {'name': 'Amol Patil', 'age': 28},
+        {'name': 'Nikhil', 'age': 14}
     ]
 
     text = """
@@ -17,15 +17,18 @@ def index(request):
     vegetables = ['Pumpkin', 'Tomato', 'Potato', 'Broccoli', 'Cabbage', 'Carrot', 'Onion']
     Available_veg = ['Tomato', 'Potato', 'Carrot', 'Onion']
     
-    return render(request, "firstapp/index.html", context = {'peoples': peoples, 'text':text, 'vegetables':vegetables, 'available_veg':Available_veg})
+    return render(request, "firstapp/index.html", context = {'peoples': peoples, 'text':text, 'page':'Index Page', 'vegetables':vegetables, 'available_veg':Available_veg})
 
 
 def contact(request):
-    return render(request, 'firstapp/contact.html')
+    context = {'page':'Contact Page'}
+    return render(request, 'firstapp/contact.html', context)
 
 
 def about(request):
-    return render(request, 'firstapp/about.html')
+    context = {'page':'About Page'}
+
+    return render(request, 'firstapp/about.html', context)
 
 
 def success_page(request):
