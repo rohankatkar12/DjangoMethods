@@ -26,8 +26,11 @@ def addreceipes(request):
 def showreciepe(request):
     page = "Reciepe List"
     receipes = Receipe.objects.all()
-    # for rece in receipes:
-    #     print(rece.receipe_image, type(rece.receipe_image))
+    
+    if request.GET.get('search'):
+        print(request.GET.get('search'))
+        receipes = receipes.filter(receipe_name__icontains = request.GET.get('search'))
+
     return render(request, 'reciepe/reciepes.html', context={'receipes':receipes, 'page':page})
 
 

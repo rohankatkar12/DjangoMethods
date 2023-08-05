@@ -5,9 +5,23 @@
 <div class="container mt-5">
     <h1 style="margin-right: 80%; background-color:skyblue;">{{page}} :</h1>
     <hr>
-    <div align="right"><a href ="/receipe" class='btn btn-success'>ADD NEW</a></div>
-    <br>
-    <table class="table">
+    <div class="mt-5">
+        <div class="mx-auto col-6"> 
+            <form action="">
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">Search Food</label>
+                    <input type="text" name="search" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+        
+        <div align="right"><a href ="/receipe" class='btn btn-success'>ADD NEW</a>
+        </div>
+    </div>
+    
+    <table class="table mt-5">
         <thead>
         <tr>
             <th scope="col">Sr. No.</th>
