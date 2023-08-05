@@ -1,0 +1,45 @@
+{% extends 'firstapp/base.html' %}
+
+{% block body %}
+{% comment %} {% load static %} {% endcomment %}
+<div class="container mt-5">
+    <h1 style="margin-right: 80%; background-color:skyblue;">{{page}} :</h1>
+    <hr>
+    <div align="right"><a href ="/receipe" class='btn btn-success'>ADD NEW</a></div>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">Receipe Name</th>
+            <th scope="col">Receipe Description</th>
+            <th scope="col">Receipe Image</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for receipe in receipes %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{receipe.receipe_name}}</td>
+            <td>{{receipe.receipe_description}}</td>
+            <td>
+                <img src="/static/{{receipe.receipe_image}}" style="height: 100px;" alt="">
+            </td>
+            <td>
+                <a href ="/receipe/editreciepe/{{receipe.id}}" class='btn btn-primary m-2'>
+                    Edit
+                </a>
+                
+                <a href ="/receipe/deletereciepe/{{receipe.id}}" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>    
+</div>
+
+{% endblock %}
