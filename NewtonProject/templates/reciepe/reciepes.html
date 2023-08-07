@@ -1,9 +1,8 @@
 {% extends 'firstapp/base.html' %}
 
 {% block body %}
-{% comment %} {% load static %} {% endcomment %}
 <div class="container mt-5">
-    <h1 style="margin-right: 80%; background-color:skyblue;">{{page}} :</h1>
+    <h1>{{page}}</h1>
     <hr>
     <div class="mt-5">
         <div class="mx-auto col-6"> 
@@ -17,7 +16,7 @@
             </form>
         </div>
         
-        <div align="right"><a href ="/receipe" class='btn btn-success'>ADD NEW</a>
+        <div align="right"><a href ="/reciepe" class='btn btn-success'>ADD NEW</a>
         </div>
     </div>
     
@@ -41,11 +40,11 @@
                 <img src="/static/{{receipe.receipe_image}}" style="height: 100px;" alt="">
             </td>
             <td>
-                <a href ="/receipe/editreciepe/{{receipe.id}}" class='btn btn-primary m-2'>
+                <a href ="/reciepe/editreciepe/{{receipe.id}}" class='btn btn-primary m-2'>
                     Edit
                 </a>
                 
-                <a href ="/receipe/deletereciepe/{{receipe.id}}" class="btn btn-danger">
+                <a href ="/reciepe/deletereciepe/{{receipe.id}}" class="btn btn-danger">
                     Delete
                 </a>
 

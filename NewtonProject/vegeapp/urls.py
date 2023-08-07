@@ -9,7 +9,11 @@ urlpatterns = [
     path('', views.addreceipes, name="addreceipes"),
     path('showreciepe/', views.showreciepe, name="showreciepe"),
     path('deletereciepe/<int:id>', views.deletereciepe, name="deletereciepe"),
-    path('editreciepe/<int:id>', views.editreciepe, name="editreciepe")
+    path('editreciepe/<int:id>', views.editreciepe, name="editreciepe"),
+
+    path('login/', views.login_page, name="login_page"),
+    path('register/', views.register_page, name="register_page"),
+    path('logout/', views.logout_page, name="logout_page")
 ]
 
 

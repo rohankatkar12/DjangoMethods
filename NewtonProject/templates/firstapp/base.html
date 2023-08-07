@@ -11,8 +11,19 @@
           }
     </style>
 </head>
-<body class="container">
-
+<body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Reciepe Project</a>
+          <form class="d-flex" role="search">
+            {% if request.user.is_authenticated %}
+            <a href="/reciepe/logout/" class="btn btn-danger" type="submit">Logout</a>
+            {% else %}
+            <a href="/reciepe/login/" class="btn btn-success" type="submit">Login</a>
+            {% endif %}
+          </form>
+        </div>
+      </nav>
 {% block body %}
 
 {% endblock  %}
