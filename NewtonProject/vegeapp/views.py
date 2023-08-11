@@ -101,7 +101,9 @@ def addreceipes(request):
 @login_required(login_url="/reciepe/login/")
 def showreciepe(request):
     page = "Reciepe List"
-    receipes = Receipe.objects.all()
+    receipes = Receipe.objects.all().order_by('-created_at')
+    # obj = receipes.reverse()
+    print(receipes)
     
     if request.GET.get('search'):
         print(request.GET.get('search'))

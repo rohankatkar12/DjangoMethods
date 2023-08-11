@@ -26,6 +26,7 @@
             <th scope="col">Sr. No.</th>
             <th scope="col">Receipe Name</th>
             <th scope="col">Receipe Description</th>
+            <th scope="col">Receipe Posts On</th>
             <th scope="col">Receipe Image</th>
             <th scope="col">Action</th>
         </tr>
@@ -36,6 +37,7 @@
             <th scope="row">{{forloop.counter}}</th>
             <td>{{receipe.receipe_name}}</td>
             <td>{{receipe.receipe_description}}</td>
+            <td>{{receipe.created_at}}</td>
             <td>
                 <img src="/static/{{receipe.receipe_image}}" style="height: 100px;" alt="">
             </td>
