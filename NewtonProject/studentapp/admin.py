@@ -15,3 +15,15 @@ class StudentIdAdmin(admin.ModelAdmin):
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['department','student_id', 'student_name', 'student_email', 'student_age', 'student_address']
+
+
+@admin.register(Subject)
+class SubjectAdmin(admin.ModelAdmin):
+    list_display = ['subject_name']
+
+
+
+class SubjectMarksAdmin(admin.ModelAdmin):
+    list_display = ['student', 'subject', 'marks']
+
+admin.site.register(SubjectMarks, SubjectMarksAdmin)
